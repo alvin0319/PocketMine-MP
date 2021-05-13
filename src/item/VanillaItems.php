@@ -115,6 +115,7 @@ use function assert;
  * @method static CookedRabbit COOKED_RABBIT()
  * @method static CookedSalmon COOKED_SALMON()
  * @method static Cookie COOKIE()
+ * @method static Crossbow CROSSBOW()
  * @method static Skull CREEPER_HEAD()
  * @method static Bed CYAN_BED()
  * @method static Dye CYAN_DYE()
@@ -399,6 +400,7 @@ final class VanillaItems{
 		self::register("cooked_rabbit", $factory->get(412));
 		self::register("cooked_salmon", $factory->get(463));
 		self::register("cookie", $factory->get(357));
+		self::register("crossbow", $factory->get(471));
 		self::register("creeper_head", $factory->get(397, 4));
 		self::register("cyan_bed", $factory->get(355, 9));
 		self::register("cyan_dye", $factory->get(351, 6));

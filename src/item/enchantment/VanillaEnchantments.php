@@ -40,10 +40,12 @@ use pocketmine\utils\RegistryTrait;
  * @method static Enchantment INFINITY()
  * @method static KnockbackEnchantment KNOCKBACK()
  * @method static Enchantment MENDING()
+ * @method static Enchantment MULTISHOT()
  * @method static Enchantment POWER()
  * @method static ProtectionEnchantment PROJECTILE_PROTECTION()
  * @method static ProtectionEnchantment PROTECTION()
  * @method static Enchantment PUNCH()
+ * @method static Enchantment QUICK_CHARGE()
  * @method static Enchantment RESPIRATION()
  * @method static SharpnessEnchantment SHARPNESS()
  * @method static Enchantment SILK_TOUCH()
@@ -101,6 +103,8 @@ final class VanillaEnchantments{
 		self::register("MENDING", new Enchantment(self::newRtId(), "%enchantment.mending", Rarity::RARE, ItemFlags::NONE, ItemFlags::ALL, 1));
 
 		self::register("VANISHING", new Enchantment(self::newRtId(), "%enchantment.curse.vanishing", Rarity::MYTHIC, ItemFlags::NONE, ItemFlags::ALL, 1));
+		self::register("MULTISHOT", new Enchantment(self::newRtId(), "%enchantment.multishot", Rarity::MYTHIC, ItemFlags::BOW, ItemFlags::NONE, 1));
+		self::register("QUICK_CHARGE", new Enchantment(self::newRtId(), "%enchantment.quick_charge", Rarity::MYTHIC, ItemFlags::BOW, ItemFlags::NONE, 3));
 	}
 
 	protected static function register(string $name, Enchantment $member) : void{

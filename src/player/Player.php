@@ -74,6 +74,7 @@ use pocketmine\form\FormValidationException;
 use pocketmine\inventory\Inventory;
 use pocketmine\inventory\PlayerCursorInventory;
 use pocketmine\item\ConsumableItem;
+use pocketmine\item\Crossbow;
 use pocketmine\item\enchantment\EnchantmentInstance;
 use pocketmine\item\enchantment\MeleeWeaponEnchantment;
 use pocketmine\item\Item;
@@ -1419,11 +1420,23 @@ class Player extends Human implements CommandSender, ChunkListener, IPlayer{
 		}
 
 		$this->resetItemCooldown($item);
-		if($this->hasFiniteResources() and !$item->equalsExact($oldItem) and $oldItem->equalsExact($this->inventory->getItemInHand())){
-			$this->inventory->setItemInHand($item);
+
+		if(!$item instanceof Crossbow and !$oldItem instanceof Crossbow){
+			if($this->hasFiniteResources() and !$item->equalsExact($oldItem) and $oldItem->equalsExact($this->inventory->getItemInHand())){
+				$this->inventory->setItemInHand($item);
+			}
+			$this->setUsingItem($item instanceof Releasable);
+		}else{
+			if(!$item->equalsExact($oldItem) and $oldItem->equalsExact($this->inventory->getItemInHand())){
+				$this->inventory->setItemInHand($item);
+			}
+			if(!$oldItem->isCharged() && !$item->isCharged()){
+				$this->setUsingItem(true);
+			}else{
+				$this->setUsingItem(false);
+			}
 		}
 
-		$this->setUsingItem($item instanceof Releasable);
 
 		return true;
 	}

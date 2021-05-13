@@ -93,6 +93,7 @@ class ItemFactory{
 		$this->register(new CookedSalmon(new ItemIdentifier(ItemIds::COOKED_SALMON, 0), "Cooked Salmon"));
 		$this->register(new Cookie(new ItemIdentifier(ItemIds::COOKIE, 0), "Cookie"));
 		$this->register(new DriedKelp(new ItemIdentifier(ItemIds::DRIED_KELP, 0), "Dried Kelp"));
+		$this->register(new Crossbow(new ItemIdentifier(ItemIds::CROSSBOW, 0), "Crossbow"));
 		$this->register(new Egg(new ItemIdentifier(ItemIds::EGG, 0), "Egg"));
 		$this->register(new EnderPearl(new ItemIdentifier(ItemIds::ENDER_PEARL, 0), "Ender Pearl"));
 		$this->register(new ExperienceBottle(new ItemIdentifier(ItemIds::EXPERIENCE_BOTTLE, 0), "Bottle o' Enchanting"));
@@ -294,7 +295,6 @@ class ItemFactory{
 		//TODO: minecraft:carrotOnAStick
 		//TODO: minecraft:chest_minecart
 		//TODO: minecraft:command_block_minecart
-		//TODO: minecraft:crossbow
 		//TODO: minecraft:elytra
 		//TODO: minecraft:emptyMap
 		//TODO: minecraft:enchanted_book
